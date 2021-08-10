@@ -1,0 +1,657 @@
+My site stopped processing payments. After entering all the card information and submitting it just hangs with the icon spinning and nothing happening. This happens with authorize.net and with paypal. Please help.
+
+This happens for new credit cards only. If you already have a cc stored and use that, it works but with server errors.
+
+
+[THIS SERIES PROCESSED AN ORDER WITH AN EXISTING CREDIT CARD ORDER 36435]
+2021-08-09 20:43:07	Access	107.77.198.91	200	GET /checkout/ HTTP/1.0	https://fixfamilycourts.com/cart/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	41.3 K	Apache SSL/TLS access
+2021-08-09 20:43:08	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/cart/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	530	nginx SSL/TLS access
+2021-08-09 20:43:14	Access	107.77.198.91	200	POST /?wc-ajax=update_order_review HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	42.4 K	Apache SSL/TLS access
+2021-08-09 20:43:19	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	530	nginx SSL/TLS access
+2021-08-09 20:43:26	Access	107.77.198.91	200	POST /?wc-ajax=checkout HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	1.27 K	Apache SSL/TLS access
+2021-08-09 20:43:42	Error	107.77.198.91		AH01071: Got error 'PHP message: billing_email was called incorrectly. Order properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Order->__get, wc_doing_it_wrong. This message was added in version 3.0.PHP message: billing_first_name was called incorrectly. Order properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Order->__get, wc_doing_it_wrong. This message was added in version 3.0.PHP message: billing_last_name was called incorrectly. Order properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Order->__get, wc_doing_it_wrong. This message was added in version 3.0.PHP message: The WC_Abstract_Legacy_Order::get_product_from_item function is deprecated since version 4.4.0. Replace with $item->get_product().PHP message: id was called incorrectly. Product properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.', referer: https://fixfamilycourts.com/checkout/				Apache error
+
+2021-08-09 20:43:43	Access	107.77.198.91	200	GET /checkout/order-received/36435/?key=wc_order_gd8RTOS3w2w3E HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	26.2 K	Apache SSL/TLS access
+2021-08-09 20:43:49	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/checkout/order-received/36435/?key=wc_order_gd8RTOS3w2w3E	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	989	Apache SSL/TLS access
+2021-08-09 20:43:53	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	791	Apache SSL/TLS access
+2021-08-09 20:43:54	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/checkout/order-received/36435/?key=wc_order_gd8RTOS3w2w3E	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	530	nginx SSL/TLS access
+2021-08-09 20:44:55	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/post.php?post=10633&action=edit&classic-editor	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	78	nginx SSL/TLS access
+
+
+[THIS SERIES PROCESSED AN ORDER WITH AN EXISTING CREDIT CARD ORDER 36436]
+2021-08-09 20:43:49	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/checkout/order-received/36435/?key=wc_order_gd8RTOS3w2w3E	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	989	Apache SSL/TLS access
+2021-08-09 20:43:53	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	791	Apache SSL/TLS access
+2021-08-09 20:43:54	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/checkout/order-received/36435/?key=wc_order_gd8RTOS3w2w3E	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	530	nginx SSL/TLS access
+2021-08-09 20:44:55	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/post.php?post=10633&action=edit&classic-editor	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	78	nginx SSL/TLS access
+
+2021-08-09 21:05:26	Error	107.77.198.91		AH01071: Got error 'PHP message: billing_email was called incorrectly. Order properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Order->__get, wc_doing_it_wrong. This message was added in version 3.0.PHP message: billing_first_name was called incorrectly. Order properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Order->__get, wc_doing_it_wrong. This message was added in version 3.0.PHP message: billing_last_name was called incorrectly. Order properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Abstract_Legacy_Order->__get, wc_doing_it_wrong. This message was added in version 3.0.PHP message: The WC_Abstract_Legacy_Order::get_product_from_item function is deprecated since version 4.4.0. Replace with $item->get_product().PHP message: id was called incorrectly. Product properties should not be accessed directly. Backtrace: require('wp-blog-header.php'), require_once('wp-includes/template-loader.php'), do_action('template_redirect'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::do_wc_ajax, do_action('wc_ajax_checkout'), WP_Hook->do_action, WP_Hook->apply_filters, WC_AJAX::checkout, WC_Checkout->process_checkout, WC_Checkout->process_order_payment, SkyVerge\\WooCommerce\\PluginFramework\\v5_10_8\\SV_WC_Payment_Gateway_Direct->process_payment, WC_Order->payment_complete, WC_Order->save, WC_Order->status_transition, do_action('woocommerce_order_status_processing'), WP_Hook->do_action, WP_Hook->apply_filters, WishlistMember_WooCommerce_plus->process_orders_payment, WC_Product_Subscription->__get, WC_Abstract_Legacy_Product->__get, wc_doing_it_wrong. This message was added in version 3.0.', referer: https://fixfamilycourts.com/checkout/				Apache error
+
+2021-08-09 21:05:26	Access	107.77.198.91	200	GET /checkout/order-received/36436/?key=wc_order_H79zWFhOBZLAT HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	26.5 K	Apache SSL/TLS access
+2021-08-09 21:05:38	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/checkout/order-received/36436/?key=wc_order_H79zWFhOBZLAT	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	989	Apache SSL/TLS access
+2021-08-09 21:05:43	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/checkout/order-received/36436/?key=wc_order_H79zWFhOBZLAT	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	529	nginx SSL/TLS access
+2021-08-09 21:05:42	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/autotest/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	791	Apache SSL/TLS access
+
+
+
+
+[ORDER WITH NEW CC]
+2021-08-09 21:20:15	Access	107.77.198.91	302	POST /product/test-recurring/ HTTP/1.0	https://fixfamilycourts.com/product/test-recurring/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	763	Apache SSL/TLS access
+2021-08-09 21:20:20	Access	107.77.198.91	200	GET /cart/ HTTP/1.0	https://fixfamilycourts.com/product/test-recurring/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	26.7 K	Apache SSL/TLS access
+2021-08-09 21:20:26	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/cart/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	3.73 K	Apache SSL/TLS access
+2021-08-09 21:20:31	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/cart/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	529	nginx SSL/TLS access
+2021-08-09 21:20:31	Access	107.77.198.91	200	POST /?wc-ajax=get_refreshed_fragments HTTP/1.0	https://fixfamilycourts.com/autotest/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	3.73 K	Apache SSL/TLS access
+2021-08-09 21:20:30	Access	107.77.198.91	200	GET /checkout/ HTTP/1.0	https://fixfamilycourts.com/cart/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	40.8 K	Apache SSL/TLS access
+2021-08-09 21:20:38	Access	107.77.198.91	200	POST /?wc-ajax=update_order_review HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	42.3 K	Apache SSL/TLS access
+2021-08-09 21:20:42	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	531	nginx SSL/TLS access
+2021-08-09 21:21:07	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	51	nginx SSL/TLS access
+2021-08-09 21:22:10	Access	107.77.198.91	200	GET /wp-admin/admin-ajax.php?action=wc_authorize_net_cim_credit_card_log_js_data&security=403d96391f&type=request&data%5BauthData%5D%5BclientKey%5D=4tgUvZwgNW3S7d7Z8qE79mpFNHAfmsRch5EuC8m8gPgVQqg8T8YpSVX6mk8jQen3&data%5BauthData%5D%5BapiLoginID%5D=9XCG4kAm3s&data%5BcardData%5D%5BcardNumber%5D=************2011&data%5BcardData%5D%5Bmonth%5D=7&data%5BcardData%5D%5Byear%5D=2024&data%5BcardData%5D%5BcardCode%5D=***&data%5BcardData%5D%5Bzip%5D=70634&data%5BcardData%5D%5BfullName%5D=Ron%20Palmer HTTP/2.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	5	nginx SSL/TLS access
+2021-08-09 21:23:09	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	51	nginx SSL/TLS access
+2021-08-09 21:25:10	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0
+2021-08-09 21:25:53	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0
+2021-08-09 21:27:12	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0
+2021-08-09 21:29:12	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0
+2021-08-09 21:31:13	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0
+[REFRESHING PAGE]
+2021-08-09 21:31:49	Access	107.77.198.91	200	GET /checkout/ HTTP/1.0	https://fixfamilycourts.com/cart/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	41.0 K	Apache SSL/TLS access
+2021-08-09 21:32:02	Access	107.77.198.91	200	GET /wp-admin/admin.php?page=stats&noheader&proxy&chart=admin-bar-hours-scale HTTP/2.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	531	nginx SSL/TLS access
+2021-08-09 21:32:02	Error	107.77.198.91		3877025#0: *6342 openat() "/var/www/vhosts/fixfamilycourts.com/httpdocs/favicon.ico" failed (2: No such file or directory)				nginx error
+2021-08-09 21:31:57	Access	107.77.198.91	200	POST /?wc-ajax=update_order_review HTTP/1.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	42.3 K	Apache SSL/TLS access
+2021-08-09 21:32:06	Access	107.77.198.91	302	GET /favicon.ico HTTP/2.0	https://fixfamilycourts.com/checkout/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	0	nginx SSL/TLS access
+[LOOKED TO SEE IF AN ORDER WAS ADDED, NO ORDER ADDED]
+2021-08-09 21:32:54	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	17	nginx SSL/TLS access
+2021-08-09 21:33:13	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	51	nginx SSL/TLS access
+2021-08-09 21:33:19	Access	107.77.198.91	200	GET /wp-admin/edit.php?post_type=shop_order HTTP/2.0	https://fixfamilycourts.com/wp-admin/	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	98.9 K	nginx SSL/TLS access
+2021-08-09 21:33:21	Access	107.77.198.91	200	GET /wp-content/uploads/2017/03/cropped-FFC-favicon-32x32.png HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	528	nginx SSL/TLS access
+2021-08-09 21:33:27	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	17	nginx SSL/TLS access
+2021-08-09 21:33:21	Access	107.77.198.91	200	GET /wp-json/wc-admin/options?options=woocommerce_ces_tracks_queue&_locale=user HTTP/1.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	1.02 K	Apache SSL/TLS access
+2021-08-09 21:33:21	Access	107.77.198.91	200	GET /wp-json/wc-analytics/admin/notes?page=1&per_page=25&status=unactioned&type%5B0%5D=info&type%5B1%5D=marketing&type%5B2%5D=survey&type%5B3%5D=warning&orderby=date&order=desc&_locale=user HTTP/1.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	30.7 K	Apache SSL/TLS access
+2021-08-09 21:33:21	Access	107.77.198.91	200	GET /wp-json/wc-analytics/admin/notes?page=1&per_page=25&type=error%2Cupdate&status=unactioned&_locale=user HTTP/1.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	1.05 K	Apache SSL/TLS access
+2021-08-09 21:33:21	Access	107.77.198.91	200	GET /wp-json/jetpack/v4/jitm?message_path=wp%3Aedit-shop_order%3Aadmin_notices&query=post_type%253Dshop_order&full_jp_logo_exists=false&_wpnonce=a094797012 HTTP/1.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	14.9 K	Apache SSL/TLS access
+2021-08-09 21:33:28	Access	107.77.198.91	200	POST /wp-admin/admin-ajax.php HTTP/2.0	https://fixfamilycourts.com/wp-admin/edit.php?post_type=shop_order	Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/92.0.4515.131 Safari/537.36	51	nginx SSL/TLS access
+
+
+[system status]`
+### WordPress Environment ###
+
+WordPress address (URL): https://fixfamilycourts.com
+Site address (URL): https://fixfamilycourts.com
+WC Version: 5.5.2
+REST API Version: ✔ 5.5.2
+WC Blocks Version: ✔ 5.3.3
+Action Scheduler Version: ✔ 3.2.1
+WC Admin Version: ✔ 2.4.4
+Log Directory Writable: ✔
+WP Version: 5.8
+WP Multisite: –
+WP Memory Limit: 512 MB
+WP Debug Mode: –
+WP Cron: ✔
+Language: en_US
+External object cache: –
+
+### Server Environment ###
+
+Server Info: nginx/1.20.1
+PHP Version: 7.4.22
+PHP Post Max Size: 64 MB
+PHP Time Limit: 120
+PHP Max Input Vars: 1000
+cURL Version: 7.68.0
+OpenSSL/1.1.1f
+
+SUHOSIN Installed: –
+MySQL Version: 5.5.5-10.3.30-MariaDB-0ubuntu0.20.04.1
+Max Upload Size: 64 MB
+Default Timezone is UTC: ✔
+fsockopen/cURL: ✔
+SoapClient: ✔
+DOMDocument: ✔
+GZip: ✔
+Multibyte String: ✔
+Remote Post: ✔
+Remote Get: ✔
+
+### Database ###
+
+WC Database Version: 5.5.2
+WC Database Prefix: FFC_
+Total Database Size: 260.96MB
+Database Data Size: 219.08MB
+Database Index Size: 41.88MB
+FFC_woocommerce_sessions: Data: 0.08MB + Index: 0.02MB + Engine InnoDB
+FFC_woocommerce_api_keys: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_woocommerce_attribute_taxonomies: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_woocommerce_downloadable_product_permissions: Data: 0.06MB + Index: 0.09MB + Engine InnoDB
+FFC_woocommerce_order_items: Data: 0.11MB + Index: 0.06MB + Engine InnoDB
+FFC_woocommerce_order_itemmeta: Data: 1.52MB + Index: 0.73MB + Engine InnoDB
+FFC_woocommerce_tax_rates: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_woocommerce_tax_rate_locations: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_woocommerce_shipping_zones: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_woocommerce_shipping_zone_locations: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_woocommerce_shipping_zone_methods: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_woocommerce_payment_tokens: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_woocommerce_payment_tokenmeta: Data: 0.09MB + Index: 0.09MB + Engine InnoDB
+FFC_woocommerce_log: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_actionscheduler_actions: Data: 4.02MB + Index: 1.72MB + Engine InnoDB
+FFC_actionscheduler_claims: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_actionscheduler_groups: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_actionscheduler_logs: Data: 2.02MB + Index: 1.64MB + Engine InnoDB
+FFC_afwc_hits: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_afwc_payouts: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_afwc_payout_orders: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_afwc_referrals: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_ahrefs_seo_content: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_ahrefs_seo_snapshots: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_aioseo_notifications: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_aioseo_posts: Data: 2.52MB + Index: 0.13MB + Engine InnoDB
+FFC_bdp_archives: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_bdp_single_layouts: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_blc_filters: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_blc_instances: Data: 1.52MB + Index: 0.22MB + Engine InnoDB
+FFC_blc_links: Data: 3.52MB + Index: 0.44MB + Engine InnoDB
+FFC_blc_synch: Data: 0.06MB + Index: 0.02MB + Engine InnoDB
+FFC_blog_designer_pro_shortcodes: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_cf7_vdata: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_cf7_vdata_entry: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_check_email_log: Data: 0.03MB + Index: 0.00MB + Engine InnoDB
+FFC_commentmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_comments: Data: 1.52MB + Index: 0.89MB + Engine InnoDB
+FFC_csshero: Data: 0.05MB + Index: 0.00MB + Engine InnoDB
+FFC_db7_forms: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_eg_grids: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_eg_item_elements: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_eg_item_skins: Data: 0.11MB + Index: 0.03MB + Engine InnoDB
+FFC_eg_navigation_skins: Data: 0.14MB + Index: 0.02MB + Engine InnoDB
+FFC_et_bloom_stats: Data: 9.52MB + Index: 0.00MB + Engine InnoDB
+FFC_et_divi_ab_testing_stats: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_et_social_stats: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_ewwwio_images: Data: 3.52MB + Index: 5.06MB + Engine InnoDB
+FFC_ewwwio_queue: Data: 0.08MB + Index: 0.06MB + Engine InnoDB
+FFC_failed_jobs: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_fb3d_pages: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_fbv: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_fbv_attachment_folder: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_fc_campaigns: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_fc_campaign_emails: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_fc_campaign_url_metrics: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_fc_funnels: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_funnel_metrics: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_funnel_sequences: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_funnel_subscribers: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_lists: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_fc_meta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_subscribers: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_fc_subscriber_meta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_subscriber_notes: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_fc_subscriber_pivot: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_fc_tags: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_fc_url_stores: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_activity: Data: 0.06MB + Index: 0.09MB + Engine InnoDB
+FFC_gh_activitymeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_gh_broadcastmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_gh_broadcasts: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_gh_contactmeta: Data: 0.17MB + Index: 0.19MB + Engine InnoDB
+FFC_gh_contactnotes: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_contacts: Data: 0.06MB + Index: 0.09MB + Engine InnoDB
+FFC_gh_emailmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_gh_emails: Data: 0.11MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_events: Data: 0.13MB + Index: 0.36MB + Engine InnoDB
+FFC_gh_event_queue: Data: 0.02MB + Index: 0.09MB + Engine InnoDB
+FFC_gh_form_impressions: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_gh_funnelmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_gh_funnels: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_permissions_keys: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_gh_stepmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_gh_steps: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_submissionmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_gh_submissions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_superlinks: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_gh_tags: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_gh_tag_relationships: Data: 0.06MB + Index: 0.09MB + Engine InnoDB
+FFC_lbg_vp1_html5_players: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_lbg_vp1_html5_videosettings: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_ld_notifications_delayed_emails: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_learndash_user_activity: Data: 0.09MB + Index: 0.31MB + Engine InnoDB
+FFC_learndash_user_activity_meta: Data: 0.13MB + Index: 0.17MB + Engine InnoDB
+FFC_links: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_mailchimp_carts: Data: 0.06MB + Index: 0.00MB + Engine InnoDB
+FFC_mailchimp_jobs: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_ngg_album: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_ngg_gallery: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_ngg_pictures: Data: 0.06MB + Index: 0.02MB + Engine InnoDB
+FFC_optimizepress_assets: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_launchfunnels: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_launchfunnels_pages: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_layout_categories: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_pb_products: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_post_layouts: Data: 12.52MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_predefined_layouts: Data: 1.52MB + Index: 0.00MB + Engine InnoDB
+FFC_optimizepress_presets: Data: 0.11MB + Index: 0.00MB + Engine InnoDB
+FFC_options: Data: 11.41MB + Index: 3.48MB + Engine InnoDB
+FFC_postmeta: Data: 20.55MB + Index: 11.03MB + Engine InnoDB
+FFC_posts: Data: 121.50MB + Index: 3.55MB + Engine InnoDB
+FFC_qss: Data: 0.19MB + Index: 0.03MB + Engine InnoDB
+FFC_queue: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_redirection_404: Data: 3.02MB + Index: 0.19MB + Engine InnoDB
+FFC_redirection_groups: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_redirection_items: Data: 0.06MB + Index: 0.09MB + Engine InnoDB
+FFC_redirection_logs: Data: 0.28MB + Index: 0.05MB + Engine InnoDB
+FFC_responsive_menu: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_revslider_css: Data: 0.13MB + Index: 0.02MB + Engine InnoDB
+FFC_revslider_layer_animations: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_revslider_navigations: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_revslider_sliders: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_revslider_slides: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_revslider_static_slides: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_smush_dir_images: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_ta_link_clicks: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_ta_link_clicks_meta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_termmeta: Data: 0.11MB + Index: 0.11MB + Engine InnoDB
+FFC_terms: Data: 0.13MB + Index: 0.16MB + Engine InnoDB
+FFC_term_relationships: Data: 0.23MB + Index: 0.20MB + Engine InnoDB
+FFC_term_taxonomy: Data: 0.13MB + Index: 0.13MB + Engine InnoDB
+FFC_uap_action_log: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_uap_action_logs_view: Data: 0.00MB + Index: 0.00MB + Engine
+FFC_uap_action_log_meta: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_uap_closure_log: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_uap_closure_log_meta: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_uap_recipe_log: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_uap_recipe_logs_view: Data: 0.00MB + Index: 0.00MB + Engine
+FFC_uap_trigger_log: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_uap_trigger_logs_view: Data: 0.00MB + Index: 0.00MB + Engine
+FFC_uap_trigger_log_meta: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_usermeta: Data: 7.52MB + Index: 5.03MB + Engine InnoDB
+FFC_users: Data: 0.30MB + Index: 0.27MB + Engine InnoDB
+FFC_wcs_payment_retries: Data: 0.13MB + Index: 0.02MB + Engine InnoDB
+FFC_wc_admin_notes: Data: 0.06MB + Index: 0.00MB + Engine InnoDB
+FFC_wc_admin_note_actions: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wc_category_lookup: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wc_customer_lookup: Data: 0.06MB + Index: 0.03MB + Engine InnoDB
+FFC_wc_download_log: Data: 0.05MB + Index: 0.03MB + Engine InnoDB
+FFC_wc_order_bundle_lookup: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_wc_order_coupon_lookup: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_wc_order_product_lookup: Data: 0.13MB + Index: 0.09MB + Engine InnoDB
+FFC_wc_order_stats: Data: 0.09MB + Index: 0.08MB + Engine InnoDB
+FFC_wc_order_tax_lookup: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_wc_product_meta_lookup: Data: 0.02MB + Index: 0.09MB + Engine InnoDB
+FFC_wc_reserved_stock: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wc_tax_rate_classes: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wc_webhooks: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wc_zapier_history: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_webinarignition: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_webinarignition_leads: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_webinarignition_questions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_webinarignition_users_online: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wfb_forms: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wfb_form_entries: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_wfb_form_entry_meta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_wfb_form_entry_values: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_wfb_queue_failures: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wfb_queue_jobs: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wi_logs: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlcc_contentarchiver: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlcc_contentmanager_move: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlcc_contentmanager_repost: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlcc_contentmanager_set: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlcc_contentsched: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlm_api_queue: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlm_contentlevels: Data: 0.16MB + Index: 0.39MB + Engine InnoDB
+FFC_wlm_contentlevel_options: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_wlm_emailbroadcast: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wlm_email_queue: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wlm_level_options: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wlm_logs: Data: 0.11MB + Index: 0.09MB + Engine InnoDB
+FFC_wlm_options: Data: 2.02MB + Index: 0.06MB + Engine InnoDB
+FFC_wlm_userlevels: Data: 0.05MB + Index: 0.05MB + Engine InnoDB
+FFC_wlm_userlevel_options: Data: 0.14MB + Index: 0.28MB + Engine InnoDB
+FFC_wlm_user_options: Data: 1.52MB + Index: 0.61MB + Engine InnoDB
+FFC_woocommerce_bundled_itemmeta: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_woocommerce_bundled_items: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_wpam_actions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_affiliates: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_affiliates_fields: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_creatives: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_events: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_impressions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_messages: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_paypal_logs: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_tracking_tokens: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_tracking_tokens_purchase_logs: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpam_transactions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpbot_response: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_wpbot_sessions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpforms_tasks_meta: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpmailsmtp_debug_events: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpmailsmtp_tasks_meta: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpsc_email_notification: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpsc_ticket: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wpsc_ticketmeta: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wpuf_subscribers: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wpuf_transaction: Data: 0.02MB + Index: 0.06MB + Engine InnoDB
+FFC_wpwbot_index: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_category: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_form: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wp_pro_quiz_lock: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_master: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_prerequisite: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_question: Data: 0.03MB + Index: 0.03MB + Engine InnoDB
+FFC_wp_pro_quiz_statistic: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_statistic_ref: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_wp_pro_quiz_template: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wp_pro_quiz_toplist: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wswebinars_chats: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wswebinars_email_queue: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wswebinars_notifications: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_wswebinars_questions: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_wswebinars_subscribers: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_wswebinars_unsubscribe: Data: 0.02MB + Index: 0.00MB + Engine InnoDB
+FFC_yoast_indexable: Data: 0.02MB + Index: 0.08MB + Engine InnoDB
+FFC_yoast_indexable_hierarchy: Data: 0.02MB + Index: 0.05MB + Engine InnoDB
+FFC_yoast_migrations: Data: 0.02MB + Index: 0.02MB + Engine InnoDB
+FFC_yoast_primary_term: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+FFC_yoast_seo_links: Data: 0.02MB + Index: 0.03MB + Engine InnoDB
+
+### Post Type Counts ###
+
+3d-flip-book: 4
+attachment: 2196
+custom_css: 3
+customize_changeset: 27
+dflip: 6
+et_body_layout: 10
+et_footer_layout: 12
+et_header_layout: 11
+et_pb_layout: 113
+et_pb_layout_stashed: 8
+et_template: 87
+et_theme_builder: 11
+feedback: 300
+glossary: 2
+groups: 3
+jetpack_migration: 2
+jetpack-portfolio: 2
+layout: 3
+ld-notification: 1
+ld-samcart-product: 1
+ml-slide: 114
+ml-slider: 3
+nav_menu_item: 178
+ngg_gallery: 4
+ngg_pictures: 48
+oembed_cache: 30
+page: 339
+portfolio: 2
+post: 634
+product: 50
+revision: 5501
+sfwd-assignment: 2
+sfwd-certificates: 2
+sfwd-courses: 21
+sfwd-essays: 17
+sfwd-lessons: 107
+sfwd-question: 6
+sfwd-quiz: 25
+sfwd-topic: 95
+sfwd-transactions: 1
+sfwd-zapier: 1
+shop_coupon: 4
+shop_order: 712
+shop_order_refund: 9
+shop_subscription: 149
+thirstylink: 4
+uo-action: 2
+uo-closure: 1
+uo-recipe: 1
+uo-trigger: 1
+wpforms: 2
+wpsc_ticket_thread: 34
+wpuf_subscription: 1
+wpws_page: 2
+
+### Security ###
+
+Secure connection (HTTPS): ✔
+Hide errors from visitors: ✔
+
+### Active Plugins (42) ###
+
+3D FlipBook : Dflip Lite: by DearHive – 1.7.6.3
+404page - your smart custom 404 error page: by Peter Raschendorfer – 11.3.0
+Adaptive Learning with LearnDash: by WooNinjas – 1.6
+Akismet Anti-Spam: by Automattic – 4.1.10
+All in One SEO: by All in One SEO Team – 4.1.3.1
+Bloom: by Elegant Themes – 1.3.12
+Broken Link Checker: by WPMU DEV – 1.11.15
+Classic Editor: by WordPress Contributors – 1.6
+Design Upgrade for LearnDash: by Escape Creative – 2.9
+Disable WP Sitemaps: by Jeff Starr – 1.4
+Divi Booster: by Dan Mossop – 3.5.4
+Divi LearnDash Kit: by Divi Booster – 1.3.3
+FluentCRM - Marketing Automation For WordPress: by Fluent CRM – 2.0.4
+WP Facebook Comments: by GenialSouls – 1.6
+HTML Page Sitemap: by  – 1.3.3
+If Menu - Visibility control for menu items: by Layered – 0.16.2
+Imsanity: by Exactly WWW – 2.7.2
+Jetpack: by Automattic – 9.9.1
+LearnDash LMS - Course Grid: by LearnDash – 1.7.0
+LearnDash LMS - Notifications: by LearnDash – 1.5.2
+LearnDash LMS - ProPanel: by LearnDash – 2.1.4.1
+LearnDash LMS - WooCommerce Integration: by LearnDash – 1.9.2
+LoginPress - Customizing the WordPress Login: by WPBrigade – 1.5.5
+Mailchimp for WooCommerce: by Mailchimp – 2.5.2
+Posts Modified Date: by Ataul Ghani – 1.2
+Redirection: by John Godley – 5.1.3
+Divi Restore Theme Builder Templates: by <a href="https://github.com/eduard-ungureanu">Eduard Ungureanu</a> and <a href="https://www.linkedin.com/in/mdtanjid/">Mohammad Tanjid</a> – 1.0
+Slider Revolution: by ThemePunch – 6.5.4
+LearnDash LMS: by LearnDash – 3.4.2.1
+Simple Local Avatars: by Jake Goldman
+10up – 2.2.0
+
+SVG Support: by Benbodhi – 2.3.19
+Uncanny Automator: by Uncanny Owl – 3.1.1
+User Role Editor: by Vladimir Garagulya – 4.60
+Wishlist Member WooCommerce Plus: by HappyPlugins – 1.9.5
+WishList Member™: by WishList Products – 3.9.7524
+WooCommerce Authorize.Net Gateway: by SkyVerge – 3.6.2
+WooCommerce Product Bundles: by SomewhereWarm – 6.11.1
+WooCommerce Shipping & Tax: by WooCommerce – 1.25.17
+WooCommerce Subscriptions: by WooCommerce – 3.1.4
+WooCommerce: by Automattic – 5.5.2
+Asset CleanUp: Page Speed Booster: by Gabe Livan – 1.3.8.0
+WP Mail SMTP: by WPForms – 3.0.2
+
+### Inactive Plugins (34) ###
+
+Affiliate For WooCommerce: by StoreApps – 1.5.0 (update to version 3.5.2 is available)
+Better Search Replace: by Delicious Brains – 1.3.4
+BuddyPress: by The BuddyPress Community – 8.0.0
+CF Page or Post Duplicator: by Carlos Fazenda – 1.1
+ChatBot: by QuantumCloud – 3.8.2
+Chatbot - WoowBot: by QunatumCloud – 3.2.1
+ChatBot for Social Media: by QuantumCloud – 0.9.7
+Check & Log Email: by WPChill – 1.0.2
+Conversational Forms: by QuantumCloud – 1.1.2
+Essential Grid: by ThemePunch – 3.0.11
+FileBird Lite: by Ninja Team – 4.7.8
+LambertGroup - HTML5 Video Player with Multiple Skins: by Lambert Group – 4.5.4.3
+Lazy Load for Videos: by Kevin Weber – 2.16.1
+Monarch Plugin: by Elegant Themes – 1.4.14
+Ron Login Logo: by Ron Palmer – 1.0
+RS FeedBurner: by Scott Allen – 1.5.3
+SupportCandy: by SupportCandy Team – 2.2.2
+SupportCandy - Canned Reply: by Support Candy – 2.0.7
+SupportCandy Woocommerce Add-On: by Support Candy – 2.1.2
+ThirstyAffiliates: by Caseproof – 3.10.2
+Uncanny Toolkit for LearnDash: by Uncanny Owl – 3.5.1
+UpdraftPlus - Backup/Restore: by UpdraftPlus.Com
+DavidAnderson – 2.16.58.25
+
+Video PopUp: by Alobaidi – 1.1.3
+WooCommerce Cart Tab: by jameskoster – 1.1.2
+WooCommerce One Page Checkout: by Automattic – 1.7.11 (update to version 1.7.12 is available)
+WooCommerce PayPal Checkout Gateway: by WooCommerce – 2.1.2
+WooCommerce PayPal Payments: by WooCommerce – 1.5.0
+WordPress Importer: by wordpressdotorg – 0.7
+WP Affiliate Manager: by wp.insider
+wpaffiliatemgr – 2.8.4
+
+wpForo: by gVectors Team – 1.9.9
+WP Sitemap Page: by Tony Archambeau – 1.6.4
+WP User Frontend: by weDevs – 3.5.18
+XML Sitemap & Google News: by RavanH – 5.2.7
+Zapier for WordPress: by Zapier – 1.0.2
+
+### Dropin Plugins (1) ###
+
+maintenance.php: maintenance.php
+
+### Must Use Plugins (1) ###
+
+LearnDash LMS Multisite: by LearnDash – 1.0.0
+
+### Settings ###
+
+API Enabled: ✔
+Force SSL: ✔
+Currency: USD ($)
+Currency Position: left
+Thousand Separator: ,
+Decimal Separator: .
+Number of Decimals: 2
+Taxonomies: Product Types: bundle (bundle)
+external (external)
+grouped (grouped)
+simple (simple)
+subscription (subscription)
+variable (variable)
+variable subscription (variable-subscription)
+
+Taxonomies: Product Visibility: exclude-from-catalog (exclude-from-catalog)
+exclude-from-search (exclude-from-search)
+featured (featured)
+outofstock (outofstock)
+rated-1 (rated-1)
+rated-2 (rated-2)
+rated-3 (rated-3)
+rated-4 (rated-4)
+rated-5 (rated-5)
+
+Connected to WooCommerce.com: ✔
+
+### WC Pages ###
+
+Shop base: #10663 - /products/
+Cart: #10632 - /cart/
+Checkout: #10633 - /checkout/
+My account: #10634 - /admin-pages/my-account/
+Terms and conditions: #11215 - /legal-statements/terms-of-use/
+
+### Theme ###
+
+Name: Divi
+Version: 4.9.10
+Author URL: http://www.elegantthemes.com
+Child Theme: ❌ – If you are modifying WooCommerce on a parent theme that you did not build personally we recommend using a child theme. See: How to create a child theme
+WooCommerce Support: ✔
+
+### Templates ###
+
+Overrides: –
+
+### Subscriptions ###
+
+WCS_DEBUG: ✔ No
+Subscriptions Mode: ✔ Live
+Subscriptions Live URL: https://fixfamilycourts.com
+Subscription Statuses: wc-active: 19
+wc-expired: 1
+wc-pending-cancel: 1
+wc-on-hold: 68
+wc-cancelled: 60
+
+WooCommerce Account Connected: ✔ Yes
+Active Product Key: ✔ Yes
+Custom Retry Rules: ✔ No
+Custom Retry Rule Class: ✔ No
+Custom Raw Retry Rule: ✔ No
+Custom Retry Rule: ✔ No
+Retries Migration Status: ✔ Completed
+Report Cache Enabled: ✔ Yes
+Cache Update Failures: ✔ 0 failure
+
+### Store Setup ###
+
+Country / State: United States (US) — Texas
+
+### Subscriptions by Payment Gateway ###
+
+Authorize.Net Credit Card: wc-active: 18
+wc-cancelled: 50
+wc-expired: 1
+wc-on-hold: 67
+wc-pending-cancel: 1
+
+other: wc-cancelled: 9
+
+### Payment Gateway Support ###
+
+Authorize.Net Credit Card: products
+card_types
+payment_form
+inline
+lightbox
+tokenization
+token_editor
+charge
+charge-virtual
+authorization
+capture_charge
+customer_decline_messages
+refunds
+voids
+customer_id
+add_payment_method
+apple_pay
+subscriptions
+subscription_suspension
+subscription_cancellation
+subscription_reactivation
+subscription_amount_changes
+subscription_date_changes
+multiple_subscriptions
+subscription_payment_method_change_customer
+subscription_payment_method_change_admin
+
+
+### Product Bundles ###
+
+Database Version: 6.11.1
+Loopback Test: ✔
+Template Overrides: –
+
+### Authorize.Net Credit Card ###
+
+Environment: Production
+Tokenization Enabled: ✔
+Debug Mode: Display at Checkout & Log
+Webhooks Enabled: ✔
+
+### Action Scheduler ###
+
+Complete: 6,559
+Oldest: 2021-07-10 13:03:10 -0500
+Newest: 2021-08-09 21:30:35 -0500
+
+Failed: 10
+Oldest: 2019-12-14 05:54:48 -0600
+Newest: 2021-06-17 18:12:00 -0500
+
+Pending: 27
+Oldest: 2021-08-09 21:41:16 -0500
+Newest: 2021-11-05 23:07:53 -0500
+
+
+### Status report information ###
+
+Generated at: 2021-08-09 21:38:33 -05:00
+`
